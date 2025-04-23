@@ -1,9 +1,16 @@
 import React from 'react'
 import { assets } from '../assets/assets'
+import { motion as M } from 'framer-motion'
 
 const Hero = () => {
   return (
-    <div className='flex flex-col sm:flex-row border border-gray-400'>
+    <M.div 
+        className='flex flex-col sm:flex-row border border-gray-400'
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: false }}
+    >
 
         {/* Hero Left Side */}
         <div className='w-full sm:w-1/2 flex items-center justify-center py-10 sm:py-0'>
@@ -22,7 +29,7 @@ const Hero = () => {
         {/* Hero Right Side */}
         <img className='w-full sm:w-1/2' src={assets.hero_img} alt="" />
         <div></div>
-    </div>
+    </M.div>
   )
 }
 

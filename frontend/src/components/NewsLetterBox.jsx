@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion as M } from 'framer-motion';
 
 const NewsLetterBox = () => {
 
@@ -7,7 +8,13 @@ const NewsLetterBox = () => {
     }
 
   return (
-    <div className='text-center'>
+    <M.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: false }}
+        className='text-center'
+    >
         <p className='text-2xl font-medium text-gray-800'>Subscribe now & get 20% off</p>
         <p className='text-gray-400 mt-3'>
             Subscribe to our newsletter and get the latest updates on new arrivals, special offers, and exclusive discounts.
@@ -18,7 +25,7 @@ const NewsLetterBox = () => {
             <button className='bg-black text-white text-xs px-10 py-4' type='submit'>SUBSCRIBE</button>
 
         </form>
-    </div>
+    </M.div>
   )
 }
 

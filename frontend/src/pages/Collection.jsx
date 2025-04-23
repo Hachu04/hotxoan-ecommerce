@@ -1,4 +1,4 @@
-import React, { use, useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { ShopContext } from '../context/ShopContext';
 import { assets } from '../assets/assets';
 import Title from '../components/Title';
@@ -51,7 +51,7 @@ const Collection = () => {
         setFilterProducts(productsCopy);
     };
 
-    const sortProducts = (e) => {
+    const sortProducts = () => {
         let fpCopy = filterProducts.slice();
 
         switch (sortType) {
